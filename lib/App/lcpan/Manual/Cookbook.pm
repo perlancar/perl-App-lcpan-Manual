@@ -22,4 +22,4 @@ package App::lcpan::Manual::Cookbook;
 To find out which prerequisites that your distributions specify but are
 currently not indexed (i.e. cannot be installed by users):
 
-    % lcpan author-deps YOURCPANID --broken
+    % lcpan author-deps YOURCPANID --broken --dont-uniquify
