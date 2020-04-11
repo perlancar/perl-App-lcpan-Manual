@@ -1,0 +1,16 @@
+package App::lcpan::Manual::Tutorial::100_WhatIsLcpan;
+
+# DATE
+# VERSION
+
+1;
+# ABSTRACT: What is lcpan
+
+=head1 DESCRIPTION
+
+# INSERT_MODULES_LIST /Tutorial::1/ -/Tutorial::100_/
+
+
+=head1 WHAT IS LCPAN
+
+TODO

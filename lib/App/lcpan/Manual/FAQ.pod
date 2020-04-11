@@ -1,0 +1,16 @@
+package App::lcpan::Manual::FAQ;
+
+# AUTHORITY
+# DATE
+# DIST
+# VERSION
+
+1;
+# ABSTRACT: FAQ on App::lcpan
+
+=head1 DESCRIPTION
+
+TODO. Some FAQ are already listed in L<lcpan>.
+
+
+=head1 SEE ALSO

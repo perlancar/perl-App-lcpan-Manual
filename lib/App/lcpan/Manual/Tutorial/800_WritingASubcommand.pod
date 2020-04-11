@@ -1,0 +1,13 @@
+package App::lcpan::Manual::Tutorial::800_WritingASubcommand;
+
+# DATE
+# VERSION
+
+1;
+# ABSTRACT: Writing your own lcpan subcommand
+
+=head1 DESCRIPTION
+
+# INSERT_MODULES_LIST /Tutorial::1/ -/Tutorial::800_/
+
+TODO
