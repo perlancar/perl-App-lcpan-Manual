@@ -1,0 +1,63 @@
+package App::lcpan::Manual::Internals;
+
+# AUTHORITY
+# DATE
+# DIST
+# VERSION
+
+1;
+# ABSTRACT: App::lcpan internals
+
+=head1 INDEXING
+
+Indexing is done in 3 passes.
+
+=head2 First pass
+
+First, we parse F<authors/01mailrc.txt.gz> and insert the data into C<author>
+table. Some DarkPANs like those produced by L<OrePAN> has F<authors/00whois.xml>
+instead. Basically we're just assigning numeric ID's to PAUSE (author) ID's.
+
+Then we parse F<modules/02packages.details.txt.gz>, which is the main meat of
+CPAN index. This file links package (module) names to release tarballs. A
+snippet from the file:
+
+ ...
+ Log::ger                          0.037  P/PE/PERLANCAR/Log-ger-0.037.tar.gz
+ Log::ger::App                     0.014  P/PE/PERLANCAR/Log-ger-App-0.014.tar.gz
+ Log::ger::DBI::Query              0.001  P/PE/PERLANCAR/Log-ger-DBI-Query-0.001.tar.gz
+ Log::ger::Filter                  0.037  P/PE/PERLANCAR/Log-ger-0.037.tar.gz
+ Log::ger::Filter::Code            0.037  P/PE/PERLANCAR/Log-ger-0.037.tar.gz
+ ...
+
+We insert these records to C<file> table (so each release file gets a numeric
+file ID) and C<module> table (so each module gets a numeric module ID as well as
+link to its file ID).
+
+At this point, we haven't parsed distribution names yet because that will need
+information from META.{json,yaml} inside the release files.
+
+Then we start to examine the release files. First we list of content of each
+release file and store the results into the C<content> table.
+
+We also populate the C<script> table by heuristically including content which
+from its name looks like script, e.g.:
+
+ script/foo
+ bin/whatever
+
+We then extract the distribution metadata files (either F<META.json> or
+F<META.yaml>) and store the information contained in these metadata files into
+the database. These include the distribution name (so we populate the C<dist>
+table) and the dependency information (the C<dep> table).
+
+At the end of this first pass, we have a pretty useful database already; because
+one of the main uses of lcpan is to provide dependency information.
+
+=head2 Second pass
+
+TBD
+
+=head2 Third pass
+
+TBD
