@@ -23,3 +23,11 @@ To find out which prerequisites that your distributions specify but are
 currently not indexed (i.e. cannot be installed by users):
 
     % lcpan author-deps YOURCPANID --broken --dont-uniquify
+
+=head2 Listing distributions of other CPAN authors that depend on one of your modules
+
+    % lcpan author-rdeps YOURCPANID --user-author-isnt YOURCPANID
+
+=head2 Listing distributions of other CPAN authors that recently depend on one of your modules
+
+TODO (e.g. --added-after '1 month ago')
