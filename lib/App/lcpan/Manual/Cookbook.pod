@@ -10,24 +10,100 @@ package App::lcpan::Manual::Cookbook;
 
 =head1 FOR MODULE USERS
 
+=head2 Listing authors
+
+=head3     Listing recent authors
+
+TODO.
+
+
+
+
+=head2 Listing dependencies
+
+=head3    Showing what other distributions you will have to download and install when you install a module
+
+TODO.
+
+
+
+
+=head2 Listing distributions
+
+=head3     Listing recent distributions
+
+TODO
+
+
+
+
+=head2 Listing modules
+
+=head3     Listing recent modules
+
+    # Show modules that were added in the last 2 weeks
+    % lcpan mods -l --added-after '2 weeks ago'
+
+    # Show modules that were updated in the last 2 weeks
+    % lcpan mods -l --updated-after '2 weeks ago'
+
+    # Show modules that were not present before the last 'lcpan update'
+    % lcpan mods -l --added-in-last-update
+
+
+=head3     Showing related modules
+
+You like L<Sub::Exporter> and wonder what other modules might be similar or
+related to it:
+
+    % lcpan related-mods Sub::Exporter
+
+
+
+
+
+
+
 
 =head1 FOR MODULE AUTHORS
 
-=head2 Checking if your distribution depends on a non-core Perl module
+=head2 Dependencies
 
-    % lcpan deps Your-Dist --exclude-core
+=head3     Checking if your distribution depends on a non-core Perl module
 
-=head2 Finding out if there is any broken prerequisites
+    % lcpan deps YOUR-DIST --exclude-core
+
+
+=head3     Checking if your distribution specifies a circular dependency
+
+TODO.
+
+
+=head3     Finding out if there is any broken prerequisites specified by one of your distributions
 
 To find out which prerequisites that your distributions specify but are
-currently not indexed (i.e. cannot be installed by users):
+currently not indexed (i.e. probably cannot be installed by users):
 
     % lcpan author-deps YOURCPANID --broken --dont-uniquify
 
-=head2 Listing distributions of other CPAN authors that depend on one of your modules
+
+
+
+
+=head2 Reverse dependencies
+
+=head3     Listing distributions of other CPAN authors that depend on one of your modules
 
     % lcpan author-rdeps YOURCPANID --user-author-isnt YOURCPANID
 
-=head2 Listing distributions of other CPAN authors that recently depend on one of your modules
 
-TODO (e.g. --added-after '1 month ago')
+=head3     Listing distributions of other CPAN authors that recently depend on one of your modules
+
+    # Show dependencies that were added in the last 2 weeks
+    % lcpan author-rdeps YOURCPANID --user-author-isnt YOURCPANID --added-after '2 weeks ago'
+
+    # Show dependencies that were updated in the last 2 weeks
+    % lcpan author-rdeps YOURCPANID --user-author-isnt YOURCPANID --updated-after '2 weeks ago'
+
+    # Show dependencies that were not present before your last 'lcpan update'
+    % lcpan author-rdeps YOURCPANID --user-author-isnt YOURCPANID --added-in-last-update
