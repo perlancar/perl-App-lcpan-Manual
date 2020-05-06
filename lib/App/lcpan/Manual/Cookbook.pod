@@ -92,7 +92,9 @@ L<App::cpanoutdated::coro>).
 
 To update outdated modules:
 
- % lcpan-ver-cmp-installed --older-than-db | lcpanm -n
+ % lcpan-ver-cmp-installed --older-than-db | td select module | lcpanm -n
+
+L<td> is provided by L<App::td>.
 
 
 =head2 Listing recent modules
