@@ -10,7 +10,12 @@ package App::lcpan::Manual::FAQ;
 
 =head1 DESCRIPTION
 
-TODO. Some FAQ are already listed in L<lcpan>.
+Some FAQs are already listed in L<lcpan>, they will be moved here. Newer FAQs go
+here.
+
+=head1 FAQ
+
+=head2 General
 
 
 =head1 SEE ALSO
