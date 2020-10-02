@@ -20,6 +20,12 @@ Items relevant to CPAN authors are tagged with C<[author]>.
 TODO.
 
 
+=head2 Sampling some random authors (1.063+)
+
+ % lcpan authors    --random --result-limit 100
+ % lcpan authors -l --random --result-limit 100
+
+
 
 
 =head1 QUERYING DEPENDENCIES
@@ -72,6 +78,11 @@ TODO.
 
 TODO
 
+=head2 Sampling some random distributions (1.063+)
+
+ % lcpan dists    --random --result-limit 100
+ % lcpan dists -l --random --result-limit 100
+
 
 
 
@@ -110,9 +121,36 @@ L<td> is provided by L<App::td>.
 
 There's also C<lcpan whatsnew>.
 
+
+=head2 Sampling some random modules (1.063+)
+
+ % lcpan mods    --random --result-limit 100
+ % lcpan mods -l --random --result-limit 100
+
+
 =head2 Showing related modules
 
 You like L<Sub::Exporter> and wonder what other modules might be similar or
 related to it:
 
     % lcpan related-mods Sub::Exporter
+
+
+
+
+=head1 QUERYING RELEASES
+
+=head2 Listing recent releases
+
+TODO.
+
+
+=head2 Sampling some random releases (1.063+)
+
+ % lcpan rels    --random --result-limit 100
+ % lcpan rels -l --random --result-limit 100
+
+
+
+
+    
