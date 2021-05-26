@@ -107,6 +107,19 @@ TODO
 
 
 
+=head1 QUERYING MENTIONS
+
+=head2 Finding out who (which script's or module's POD) mentions your module [author]
+
+ % lcpan mentions-for-mod YOUR-MODULE
+
+=head2 Finding out who (which script's or module's POD) mentions your script [author]
+
+ % lcpan mentions-for-script YOUR-SCRIPT
+
+
+
+
 =head1 QUERYING MODULES
 
 =head2 Comparing version of installed modules vs local CPAN versions
@@ -156,7 +169,10 @@ related to it:
 
     % lcpan related-mods Sub::Exporter
 
-
+The C<related-mods> subcommand uses the degree of being mentioned together as a
+proxy for relatedness. If you want to see in which POD documents the module and
+related module are being mentioned together, you can add `--with-content-paths`
+option.
 
 
 =head1 QUERYING RELEASES
