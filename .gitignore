@@ -2,3 +2,4 @@ App-lcpan-Manual-*
 .build
 *~
 nytprof*
+.DS_Store
